@@ -1,4 +1,4 @@
-#Catch of the Day
+## Catch of the Day
 
 This project is simple E-commerce you can choose your desired fish and order it.
 
