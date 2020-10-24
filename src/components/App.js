@@ -10,7 +10,7 @@ class App extends React.Component {
   state = {
     fishes: {},
     order: {}
-  };
+  }
 
   componentDidMount() {
     const { params } = this.props.match;
@@ -40,7 +40,15 @@ class App extends React.Component {
     this.setState({
       fishes: fishes
     });
-  };
+  }
+
+  updateFish = (key, updateFish) => {
+    const fishes = { ...this.state.fishes };
+    fishes[key] = updateFish;
+    this.setState({ fishes });
+
+  }
+
   loadSampleFishes = () => {
     this.setState({
       fishes: samplefishes
@@ -68,7 +76,9 @@ class App extends React.Component {
         <Order fishes={this.state.fishes} order={this.state.order} />
         <Inventory
           addFish={this.addFish}
+          updateFish={this.updateFish}
           loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
         />
       </div> 
     )
